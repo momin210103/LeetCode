@@ -14,7 +14,7 @@ public:
         ListNode* result = new ListNode();
         ListNode* ptr = result;
         int carry =0;
-        while(l1!=nullptr or l2!=nullptr){
+        while(l1!=nullptr or l2!=nullptr or carry!=0){
             int sum = 0 + carry;
             if(l1!=nullptr){
                 sum+=l1->val;
@@ -30,7 +30,7 @@ public:
             ptr->next = new ListNode(sum);
             ptr = ptr->next;
         }
-        if(carry==1) ptr->next = new ListNode(1);
+        // if(carry==1) ptr->next = new ListNode(1);
         return result->next;
         
     }
